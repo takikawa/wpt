@@ -1,0 +1,11 @@
+<!doctype html>
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script type=module>
+setup({ single_test: true });
+import {incrementCount} from "./mutable-global-from-js.wasm";
+import {count} from "./mutable-global-from-js.mjs";
+incrementCount();
+assert_equals(count.valueOf(), 43);
+done();
+</script>
